@@ -133,6 +133,11 @@ class LinphoneFriendImpl implements LinphoneFriend, Serializable {
 	private native void setName(long nativePtr, String name);
 	@Override
 	public void setName(String name) {
+		if(null == name || name.isEmpty())
+		{
+			return;
+		}
+		
 		setName(nativePtr, name);
 	}
 	
